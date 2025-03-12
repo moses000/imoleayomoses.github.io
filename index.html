@@ -6,8 +6,10 @@
     <title>Imoleayo Moses - Software Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 </head>
-<body>
+<body class="dark">
     <header>
         <div class="logo">
             <img src="Imoleayo_moses_photo.jfif" alt="Imoleayo Moses Logo" id="logo-img">
@@ -16,8 +18,10 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">☰</div>
@@ -25,95 +29,220 @@
         <button id="theme-toggle">🌙</button>
     </header>
 
-    <section id="home" class="hero">
-        <h1>Imoleayo Moses</h1>
-        <p class="subtitle">Software Engineer & Automation Expert</p>
-        <p>Building scalable, AI-driven solutions for a connected world.</p>
-        <div class="cta-buttons">
-            <a href="#projects" class="btn">Explore Projects</a>
-            <a href="#contact" class="btn">Hire Me</a>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div id="particles-js"></div>
+            <h1><span id="typed-name">Imoleayo Moses</span></h1>
+            <p class="subtitle">Software Engineer & Automation Expert</p>
+            <p>Building scalable, AI-driven solutions for a connected world.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn pulse">Explore Projects</a>
+                <a href="#contact" class="btn pulse">Hire Me</a>
+            </div>
+        </section>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>With over 6 years of experience, I specialize in data-driven automation, real-time systems, and AI/ML solutions. From telecom network dashboards to e-commerce platforms, I turn complex challenges into efficient, scalable outcomes.</p>
-                <p><strong>Stats:</strong> 20+ developers mentored | 98% network uptime achieved | 80% faster analytics</p>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>With over 6 years of experience, I specialize in data-driven automation, real-time systems, and AI/ML solutions. From telecom network dashboards to e-commerce platforms, I turn complex challenges into efficient, scalable outcomes.</p>
+                    <p><strong>Stats:</strong> 20+ developers mentored | 98% network uptime achieved | 80% faster analytics</p>
+                </div>
+                <img src="Imoleayo_moses_photo.jfif" alt="Imoleayo Moses" class="about-img">
             </div>
-            <img src="Imoleayo_moses_photo.jfif" alt="Imoleayo Moses" class="about-img">
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill">Python</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">TypeScript</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Go</div>
-            <div class="skill">FastAPI</div>
-            <div class="skill">Django</div>
-            <div class="skill">React</div>
-            <div class="skill">AWS</div>
-            <div class="skill">Docker</div>
-        </div>
-    </section>
+        <section id="experience" class="section">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>RGS World Wide Limited (Huawei)</h3>
+                        <p><strong>Software Engineer & Automation Lead</strong> | May 2021 – Present</p>
+                        <p>Designed AI/ML-powered telecom systems, achieving 98% uptime across 40,000+ sites.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>DevFast Innovations</h3>
+                        <p><strong>Software Developer</strong> | Sep 2018 – Apr 2021</p>
+                        <p>Built scalable payment gateways with 99.9% reliability using NestJS and AWS.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>GitHub Inc. Campus Ambassador</h3>
+                        <p><strong>Volunteer</strong> | 2018</p>
+                        <p>Mentored participants in a 30-day coding challenge.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Server Monitoring Dashboard</h3>
-                <p>A real-time platform for CPU, memory, and network metrics visualization.</p>
-                <p><strong>Tech:</strong> React.js, Python, Prometheus</p>
-                <a href="#" class="btn">Watch Demo</a>
-                <a href="#" class="btn">View Code</a>
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-bar"><span>Python</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
+                <div class="skill-bar"><span>JavaScript</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
+                <div class="skill-bar"><span>TypeScript</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
+                <div class="skill-bar"><span>SQL</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
+                <div class="skill-bar"><span>noSQL</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
+                <div class="skill-bar"><span>AWS</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
+                <div class="skill-bar"><span>GO</span><div class="progress-bar"><div class="progress" data-level="50"></div></div></div>
+                <div class="skill-bar"><span>C++</span><div class="progress-bar"><div class="progress" data-level="40"></div></div></div>
+                <div class="skill-bar"><span>Machine Learning</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
+                <div class="skill-bar"><span> Low-Level Optimization (SIMD, Parallel Processing)</span><div class="progress-bar"><div class="progress" data-level="70"></div></div></div>
+                <div class="skill-bar"><span> AI Agents</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
+                <div class="skill-bar"><span> Automation</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
             </div>
-            <div class="project-card">
-                <h3>Pikia Market</h3>
-                <p>A full-stack e-commerce app connecting African vendors to the diaspora.</p>
-                <p><strong>Tech:</strong> Python, Node.js, React Native</p>
-                <a href="#" class="btn">Watch Demo</a>
-                <a href="#" class="btn">View Code</a>
+            <div class="tech-cloud">
+                <span>FastAPI</span>
+                <span>Django</span>
+                <span>React</span>
+                <span>ReactNative</span>
+                <span>NextJs</span>
+                <span>gRPC & Protocol 
+                    Buffers</span>
+                <span>Apache Spark</span>
+                <span>Postgresql</span>
+                <span>Redis</span>
+                <span>DynamoDB</span>
+                <span>Microservices</span>
+                <span>Route53</span>
+                <span>AWS Lambda</span>
+                <span>Terraform</span>
+                <span>GitHub Actions</span>
+                <span>Jenkins</span>
+                <span>Automation</span>
+                <span>Neo4j</span>
+                <span>Cassandra</span>
+                <span>TimescaleDB</span>
+                <span>Node.js</span>
+                <span>GraphQL</span>
+                <span>Docker</span>
+                <span>Kubernetes</span>
+                <span>Kafka</span>
+                <span>TensorFlow</span>
+                <span>MongoDB</span>
             </div>
-            <div class="project-card">
-                <h3>Personalized Shopping Experience</h3>
-                <p>AI-powered e-commerce with AR product visualization.</p>
-                <p><strong>Tech:</strong> React Native, TensorFlow.js, AWS</p>
-                <a href="#" class="btn">Watch Demo</a>
-                <a href="#" class="btn">View Code</a>
+            <div class="metrics">
+                <div><span class="metric-value" data-target="45">0</span>% <p>Query Latency Reduced</p></div>
+                <div><span class="metric-value" data-target="98">0</span>% <p>Network Uptime and availability</p></div>
+                <div><span class="metric-value" data-target="80">0</span>% <p>Faster Analytics</p></div>
             </div>
-            <div class="project-card">
-                <h3>MTN NG Network Report Automation</h3>
-                <p>Automated hourly outage reports delivered via WhatsApp.</p>
-                <p><strong>Tech:</strong> Python, Selenium, WhatsApp API</p>
-                <a href="#" class="btn">Watch Demo</a>
-                <a href="#" class="btn">View Code</a>
-            </div>
-        </div>
-    </section>
+            <!-- <h3>System Performance</h3> -->
+            <div class="live-demo">
+                <h3>Visitor Performance Monitor</h3>
+                <canvas id="performance-chart" width="250" height="100"></canvas>
+                <p>Cores: ${coreCount} | Real-time CPU impact of this site on your device. </p>
+              </div>
+            <!-- <div class="live-demo">
+                <h3>Live Network Monitor Demo</h3>
+                <canvas id="network-chart" width="300" height="150"></canvas>
+                <p>Simulated CPU Usage (updates every 2s)</p>
+            </div> -->
+        </section>
 
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit" class="btn">Send</button>
-        </form>
-        <div class="social-links">
-            <a href="mailto:im.imoleayomoses@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/imoleayomoses/">LinkedIn</a>
-        </div>
-    </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-carousel">
+                <div class="carousel-inner">
+                    <div class="project-card">
+                        <h3>Server Monitoring Dashboard</h3>
+                        <p>A real-time platform for CPU, memory, and network metrics visualization.</p>
+                        <p><strong>Tech:</strong> React.js, Python, Prometheus</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn demo-btn">Watch Demo</a>
+                            <a href="https://github.com" class="btn">View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Pikia Market</h3>
+                        <p>A full-stack e-commerce app connecting African vendors to the diaspora.</p>
+                        <p><strong>Tech:</strong> Python, Node.js, React Native</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn demo-btn">Watch Demo</a>
+                            <a href="https://github.com" class="btn">View Code</a>
+                        </div>
+                    </div>
+                    <!-- Add 18 more projects here -->
+                    <div class="project-card">
+                        <h3>Project 20</h3>
+                        <p>A placeholder for your 20th project.</p>
+                        <p><strong>Tech:</strong> Python, AWS</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn demo-btn">Watch Demo</a>
+                            <a href="https://github.com" class="btn">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-prev">❮</button>
+                <button class="carousel-next">❯</button>
+            </div>
+        </section>
+
+        <section id="awards" class="section">
+            <h2>Recommendations & Awards</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="inner">
+                        <div class="front">“Best in Project Development – STEMBelle Foundation 2021”</div>
+                        <div class="back">Awarded for outstanding project work.</div>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="inner">
+                        <div class="front">“Huawei RNOC Quarterly Award – 2024”</div>
+                        <div class="back">Recognized for automation excellence.</div>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="inner">
+                        <div class="front">“Most Outstanding Staff & Team Player – 2024”</div>
+                        <div class="back">Honored for teamwork and dedication.</div>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="inner">
+                        <div class="front">“Recommendation: Exceptional dedication – Huawei NOC Manager, 2024”</div>
+                        <div class="back">Commended by NOC Manager.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2>Contact Me</h2>
+            <div class="contact-container">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn pulse">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:im.imoleayomoses@gmail.com">im.imoleayomoses@gmail.com</a></p>
+                    <p><strong>Phone:</strong> +234 8104913313</p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/imoleayomoses/">imoleayomoses</a></p>
+                    <a href="path-to-your-cv.pdf" download class="btn pulse">Download CV</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2025 Imoleayo Moses | Built with Passion & Code</p>
+        <p>© 2025 Imoleayo Moses | Software Engineer</p>
         <a href="#home" class="back-to-top">↑</a>
     </footer>
+
+    <div id="video-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <iframe id="youtube-iframe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
