@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imoleayo Moses | Software Engineer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Imoleayo Moses</h1>
+      <p class="subtitle">Software Engineer | Automation | AI/ML | DevOps</p>
+      <nav>
+        <a href="mailto:im.imoleayomoses@gmail.com">Email</a> |
+        <a href="https://linkedin.com/in/imoleayomoses" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/moses000" target="_blank">GitHub</a> |
+        <a href="https://medium.com/@imoleayomoses" target="_blank">Medium</a> |
+        <a href="tel:+2348104913313">+234 8104913313</a>
+      </nav>
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="summary">
+      <h2>Professional Summary</h2>
+      <p>Experienced Software Engineer and Automation Expert with 6+ years in data-driven solutions, automation, and real-time data systems. Built AI/ML-powered e-commerce platforms, automation tools, and scalable enterprise applications. Passionate about innovation, mentorship, and efficiency through automation and machine learning.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Core Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Python, JavaScript, TypeScript, SQL, Go</li>
+        <li><strong>Frameworks & Tools:</strong> Fast API, Django, Node.js, React, React Native, Next.js, NestJs, gRPC & Protocol Buffers, GraphQL, Apache Spark, TensorFlow</li>
+        <li><strong>DevOps:</strong> Docker, Kubernetes, AWS (ECS, S3, SNS, RDS, Route53, AWS Lambda), Terraform, CI/CD Pipelines (GitHub Actions, Jenkins), Gradle, Linux, Git, Prometheus, Grafana, Ansible</li>
+        <li><strong>Databases:</strong> MongoDB, SQL, PostgreSQL, Redis, DynamoDB, Neo4j, Cassandra, TimescaleDB</li>
+        <li><strong>Others:</strong> Kafka, RabbitMQ, Cloud, Agile Methodology, Microservices, Automation, Machine Learning, AI Agents, Low-Level Optimization (SIMD, Parallel Processing)</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="job">
+        <h3>RGS World Wide Limited (Huawei) - Software Engineer & Automation Lead</h3>
+        <p><em>May 2021 – Present</em></p>
+        <ul>
+          <li>Designed AI/ML-powered telecom network management systems, monitoring 40,000+ sites with 98% uptime.</li>
+          <li>Developed real-time analytics dashboards, reducing incident analysis time by 80%.</li>
+          <li>Implemented secure authentication with OAuth, JWT, and AWS IAM.</li>
+          <li>Led a team of 20+ developers, achieving 95% project success rate.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>DevFast Innovations - Software Developer</h3>
+        <p><em>September 2018 – April 2021</em></p>
+        <ul>
+          <li>Built secure payment gateways with Stripe API and NestJS, achieving 99.9% reliability.</li>
+          <li>Optimized cloud-native apps with AWS and Docker, improving request processing by 40%.</li>
+          <li>Designed scalable microservices, reducing query latency by 35%.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Key Projects</h2>
+      <div class="project">
+        <h3>Server Monitoring Dashboard</h3>
+        <p><strong>Skills:</strong> React.js, Python, Prometheus, Grafana, CI/CD, Docker, Jenkins, DevOps</p>
+        <p>Real-time server monitoring platform with data visualization for CPU, memory, and network metrics.</p>
+      </div>
+      <div class="project">
+        <h3>Pikia Market (E-Commerce App)</h3>
+        <p><strong>Skills:</strong> Python, Node.js, React Native, Expo, APIs, UI/UX</p>
+        <p>Full-stack e-commerce platform connecting African vendors with diaspora customers.</p>
+      </div>
+      <div class="project">
+        <h3>Personalized Shopping Experience</h3>
+        <p><strong>Skills:</strong> React Native, Python, TensorFlow.js, OpenCV, AWS, AR</p>
+        <p>Next-gen e-commerce with ML-driven recommendations and AR visualization.</p>
+      </div>
+      <div class="project">
+        <h3>MTN NG Network Report Automation</h3>
+        <p><strong>Skills:</strong> Automation, APIs, GIS, Python, Selenium, WhatsApp API</p>
+        <p>Automated hourly network outage reports delivered via WhatsApp.</p>
+      </div>
+    </section>
+
+    <section id="awards">
+      <h2>Awards & Recognitions</h2>
+      <ul>
+        <li><strong>Best in Project Development and Presentation – 2021</strong> (STEMBelle Foundation)</li>
+        <li><strong>RGS Huawei RNOC Quarterly Award – 2024</strong> (Software Tools & Automation)</li>
+        <li><strong>RGS Huawei Most Outstanding Staff – 2024</strong> (Teamwork & Dedication)</li>
+      </ul>
+    </section>
+
+    <section id="recommendations">
+      <h2>Recommendations</h2>
+      <p><strong>RGS Huawei NOC – 2024</strong>: Formal appreciation from NOC Manager for exceptional dedication.</p>
+    </section>
+
+    <section id="voluntary">
+      <h2>Voluntary Service</h2>
+      <p><strong>GitHub Inc. Campus Ambassador – 2018</strong>: Mentored participants in a 30-day coding challenge.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>Ladoke Akintola University of Technology</strong><br>Bachelor of Technology – 2017</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Imoleayo Moses. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    });
+    if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-theme');
+  </script>
+</body>
+</html>

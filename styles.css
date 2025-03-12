@@ -1,0 +1,127 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header */
+  header {
+    background: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+  }
+  
+  .subtitle {
+    font-style: italic;
+    margin: 10px 0;
+  }
+  
+  nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  #theme-toggle {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  /* Sections */
+  section {
+    margin: 20px 0;
+  }
+  
+  h2 {
+    font-size: 1.8em;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  ul li {
+    margin: 10px 0;
+  }
+  
+  .job, .project {
+    margin: 15px 0;
+  }
+  
+  .job h3, .project h3 {
+    font-size: 1.4em;
+    color: #2c3e50;
+  }
+  
+  .job p, .project p {
+    margin: 5px 0;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+  }
+  
+  /* Dark Theme */
+  .dark-theme {
+    background: #1a1a1a;
+    color: #ecf0f1;
+  }
+  
+  .dark-theme header,
+  .dark-theme footer {
+    background: #34495e;
+  }
+  
+  .dark-theme h2 {
+    border-color: #ecf0f1;
+  }
+  
+  .dark-theme .job h3,
+  .dark-theme .project h3 {
+    color: #ecf0f1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2em;
+    }
+    nav {
+      font-size: 0.9em;
+    }
+    .container {
+      padding: 15px;
+    }
+  }
