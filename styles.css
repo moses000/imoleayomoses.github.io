@@ -8,15 +8,15 @@
 /* Base Styles (Dark Mode Default) */
 body {
     font-family: 'Inter', sans-serif;
-    background: #1A1A1A; /* Dark mode default */
-    color: #FFF; /* Dark mode default */
+    background: #1A1A1A;
+    color: #FFF;
     transition: all 0.5s ease;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 body:not(.dark) {
-    background: #F5F5F5; /* Light mode override */
+    background: #F5F5F5;
     color: #333;
 }
 main {
@@ -31,11 +31,11 @@ header {
     padding: 20px;
     position: sticky;
     top: 0;
-    background: rgba(26, 26, 26, 0.9); /* Dark mode default */
+    background: rgba(26, 26, 26, 0.9);
     z-index: 1000;
 }
 body:not(.dark) header {
-    background: rgba(245, 245, 245, 0.9); /* Light mode override */
+    background: rgba(245, 245, 245, 0.9);
 }
 .logo img {
     width: 50px;
@@ -54,11 +54,11 @@ body:not(.dark) header {
 }
 .nav-links a {
     text-decoration: none;
-    color: #FFF; /* Dark mode default */
+    color: #FFF;
     font-weight: bold;
 }
 body:not(.dark) .nav-links a {
-    color: #333; /* Light mode override */
+    color: #333;
 }
 .hamburger {
     display: none;
@@ -73,22 +73,32 @@ body:not(.dark) .nav-links a {
 }
 
 /* Hero */
+
 .hero {
     position: relative;
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(135deg, #00D4FF, #1A1A1A); /* Dark mode default */
+    background: linear-gradient(135deg, #00D4FF, #1A1A1A);
 }
 body:not(.dark) .hero {
-    background: linear-gradient(135deg, #007BFF, #F5F5F5); /* Light mode override */
+    background: linear-gradient(135deg, #007BFF, #F5F5F5);
 }
+#software-particles {
+    position: absolute;
+    top: 50;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+}
+
 #particles-js {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .hero h1 {
     font-family: 'Poppins', sans-serif;
@@ -103,20 +113,20 @@ body:not(.dark) .hero {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    background: #00D4FF; /* Dark mode default */
+    background: #00D4FF;
     color: #FFF;
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
 }
 body:not(.dark) .cta-buttons .btn {
-    background: #007BFF; /* Light mode override */
+    background: #007BFF;
 }
 .cta-buttons .btn:hover {
-    background: #00aaff; /* Dark mode hover */
+    background: #00aaff;
 }
 body:not(.dark) .cta-buttons .btn:hover {
-    background: #0056b3; /* Light mode hover */
+    background: #0056b3;
 }
 .btn.pulse {
     animation: pulse 2s infinite;
@@ -164,6 +174,49 @@ body:not(.dark) .btn.pulse {
     border-radius: 10px;
     animation: slideIn 1s ease;
 }
+.about-text {
+    max-width: 600px; /* Slightly wider for better line length */
+    text-align: left;
+    line-height: 1.6; /* Improved readability */
+}
+
+.about-text h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    color: #00D4FF; /* Dark mode accent */
+}
+body:not(.dark) .about-text h3 {
+    color: #007BFF; /* Light mode accent */
+}
+
+.about-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.about-text li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.about-text li:before {
+    content: "▹"; /* Subtle arrow for list items */
+    position: absolute;
+    left: 0;
+    color: #00D4FF; /* Dark mode */
+}
+body:not(.dark) .about-text li:before {
+    color: #007BFF; /* Light mode */
+}
+
+.about-text strong {
+    font-weight: 700;
+    color: inherit;
+}
+
 
 /* Timeline */
 .timeline {
@@ -178,35 +231,38 @@ body:not(.dark) .btn.pulse {
     left: 50%;
     width: 2px;
     height: 100%;
-    background: #00D4FF; /* Dark mode default */
+    background: #00D4FF;
     transform: translateX(-50%);
 }
 body:not(.dark) .timeline::before {
-    background: #007BFF; /* Light mode override */
+    background: #007BFF;
 }
 .timeline-item {
     margin: 20px 0;
     position: relative;
     width: 50%;
 }
-.timeline-item:nth-child(odd) {
+.timeline-item p {
+    font-size: 12px;
+}
+/* .timeline-item:nth-child(odd) {
     left: 0;
     text-align: right;
     padding-right: 40px;
-}
+} */
 .timeline-item:nth-child(even) {
     left: 50%;
     padding-left: 40px;
 }
 .timeline-content {
-    background: #2A2A2A; /* Dark mode default */
+    background: #2A2A2A;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 body:not(.dark) .timeline-content {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
 }
 .timeline-content::before {
     content: '';
@@ -214,11 +270,11 @@ body:not(.dark) .timeline-content {
     top: 20px;
     width: 10px;
     height: 10px;
-    background: #00D4FF; /* Dark mode default */
+    background: #00D4FF;
     border-radius: 50%;
 }
 body:not(.dark) .timeline-content::before {
-    background: #007BFF; /* Light mode override */
+    background: #007BFF;
 }
 .timeline-item:nth-child(odd) .timeline-content::before {
     right: -25px;
@@ -248,29 +304,31 @@ body:not(.dark) .timeline-content::before {
 }
 .progress {
     height: 100%;
-    background: #00D4FF; /* Dark mode default */
+    background: #00D4FF;
     width: 0;
     transition: width 1.5s ease;
 }
 body:not(.dark) .progress {
-    background: #007BFF; /* Light mode override */
+    background: #007BFF;
 }
 .tech-cloud {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 20px auto;
 }
 .tech-cloud span {
-    display: inline-block;
-    margin: 10px;
-    padding: 8px 15px;
-    background: #00D4FF; /* Dark mode default */
-    color: #FFF;
-    border-radius: 20px;
-    font-size: 14px;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    background: #00D4FF;
+    color: white;
+    border-radius: 5px;
     transition: transform 0.3s;
 }
 body:not(.dark) .tech-cloud span {
-    background: #007BFF; /* Light mode override */
+    background: #007BFF;
 }
 .tech-cloud span:hover {
     transform: scale(1.1);
@@ -288,10 +346,10 @@ body:not(.dark) .tech-cloud span {
     display: block;
     font-size: 32px;
     font-family: 'Poppins', sans-serif;
-    color: #00D4FF; /* Dark mode default */
+    color: #00D4FF;
 }
 body:not(.dark) .metric-value {
-    color: #007BFF; /* Light mode override */
+    color: #007BFF;
 }
 .metrics p {
     font-size: 14px;
@@ -300,92 +358,149 @@ body:not(.dark) .metric-value {
     max-width: 300px;
     margin: 20px auto;
     text-align: center;
-    background: #2A2A2A; /* Dark mode default */
+    background: #2A2A2A;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 body:not(.dark) .live-demo {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
 }
 #performance-chart {
-    background: #333; /* Dark mode default */
+    background: #333;
     border-radius: 5px;
 }
 body:not(.dark) #performance-chart {
-    background: #F0F0F0; /* Light mode override */
-}
-
-#network-chart {
-    background: #333; /* Dark mode default */
-    border-radius: 5px;
-}
-body:not(.dark) #network-chart {
-    background: #F0F0F0; /* Light mode override */
+    background: #F0F0F0;
 }
 
 /* Projects Carousel */
+/* Projects Carousel */
 .projects-carousel {
     position: relative;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 50px;
+    overflow: hidden;
+    white-space: nowrap; /* Ensure all items stay in one line */
 }
+
+/* Ensure all cards stay in a row */
 .carousel-inner {
     display: flex;
     flex-wrap: nowrap;
     gap: 20px;
     transition: transform 0.5s ease;
+    will-change: transform;
 }
+
+/* Project Card - Adjusting visibility */
 .project-card {
-    flex: 0 0 360px;
-    background: #2A2A2A; /* Dark mode default */
+    flex: 0 0 300px; /* Ensure cards do not shrink */
+    min-width: 300px; /* Maintain consistent size */
+    max-width: 300px;
+    background: #2A2A2A;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
+    opacity: 1; /* Make sure all cards are fully visible */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 body:not(.dark) .project-card {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
 }
+
+.project-card:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Ensure project titles are readable */
 .project-card h3 {
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
+    font-size: 18px; /* Ensure font is not too small */
 }
+
+/* Links inside projects */
 .project-links {
     margin-top: 15px;
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
+
+/* Navigation Buttons */
 .carousel-prev, .carousel-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #00D4FF; /* Dark mode default */
+    background: #00D4FF;
     color: #FFF;
     border: none;
     padding: 10px 15px;
     font-size: 20px;
     cursor: pointer;
     border-radius: 50%;
+    transition: background 0.3s, opacity 0.3s;
+    z-index: 10;
+    opacity: 1;
+}
+
+body:not(.dark) .carousel-prev, body:not(.dark) .carousel-next {
+    background: #007BFF;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background: #00aaff;
+    opacity: 1;
+}
+
+body:not(.dark) .carousel-prev:hover, body:not(.dark) .carousel-next:hover {
+    background: #0056b3;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+/* Show navigation buttons on hover */
+.projects-carousel:hover .carousel-prev,
+.projects-carousel:hover .carousel-next {
+    opacity: 1;
+}
+
+/* Dots (indicators) */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.carousel-indicators span {
+    width: 10px;
+    height: 10px;
+    background: #CCC;
+    border-radius: 50%;
+    cursor: pointer;
     transition: background 0.3s;
 }
-body:not(.dark) .carousel-prev, body:not(.dark) .carousel-next {
-    background: #007BFF; /* Light mode override */
+
+.carousel-indicators span.active {
+    background: #00D4FF;
 }
-.carousel-prev:hover, .carousel-next:hover {
-    background: #00aaff; /* Dark mode hover */
+
+body:not(.dark) .carousel-indicators span.active {
+    background: #007BFF;
 }
-body:not(.dark) .carousel-prev:hover, body:not(.dark) .carousel-next:hover {
-    background: #0056b3; /* Light mode hover */
-}
-.carousel-prev {
-    left: 0;
-}
-.carousel-next {
-    right: 0;
-}
+
 
 /* Awards */
 .awards-grid {
@@ -414,7 +529,7 @@ body:not(.dark) .carousel-prev:hover, body:not(.dark) .carousel-next:hover {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    background: #2A2A2A; /* Dark mode default */
+    background: #2A2A2A;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -424,7 +539,7 @@ body:not(.dark) .carousel-prev:hover, body:not(.dark) .carousel-next:hover {
     text-align: center;
 }
 body:not(.dark) .front, body:not(.dark) .back {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
 }
 .back {
     transform: rotateY(180deg);
@@ -432,10 +547,10 @@ body:not(.dark) .front, body:not(.dark) .back {
 
 /* Contact */
 .contact-section {
-    background: linear-gradient(135deg, #00D4FF, #1A1A1A); /* Dark mode default */
+    background: linear-gradient(135deg, #00D4FF, #1A1A1A);
 }
 body:not(.dark) .contact-section {
-    background: linear-gradient(135deg, #007BFF, #F5F5F5); /* Light mode override */
+    background: linear-gradient(135deg, #007BFF, #F5F5F5);
 }
 .contact-container {
     display: flex;
@@ -445,13 +560,13 @@ body:not(.dark) .contact-section {
     margin: 0 auto;
 }
 .contact-form {
-    background: #2A2A2A; /* Dark mode default */
+    background: #2A2A2A;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 body:not(.dark) .contact-form {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
 }
 .form-group {
     display: flex;
@@ -463,17 +578,23 @@ body:not(.dark) .contact-form {
     margin: 10px 0;
     border: none;
     border-radius: 5px;
-    background: #333; /* Dark mode default */
+    background: #333;
     color: #FFF;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 body:not(.dark) .contact-form input, body:not(.dark) .contact-form textarea {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
     color: #333;
     border: 1px solid #CCC;
 }
 .contact-info {
+    /* text-align: left; */
+    margin-top: 10px;
+    /* color: #FFF; */
+}
+.contact-info p {
     text-align: left;
+    margin-top: 10px;
     color: #FFF;
 }
 .contact-info a {
@@ -486,13 +607,13 @@ body:not(.dark) .contact-form input, body:not(.dark) .contact-form textarea {
 
 /* Footer */
 footer {
-    background: #111; /* Dark mode default */
+    background: #111;
     color: #FFF;
     text-align: center;
     padding: 20px;
 }
 body:not(.dark) footer {
-    background: #333; /* Light mode override */
+    background: #333;
 }
 .back-to-top {
     color: #FFF;
@@ -516,12 +637,12 @@ body:not(.dark) footer {
     margin: 10% auto;
     width: 80%;
     max-width: 600px;
-    background: #2A2A2A; /* Dark mode default */
+    background: #2A2A2A;
     padding: 20px;
     border-radius: 10px;
 }
 body:not(.dark) .modal-content {
-    background: #FFF; /* Light mode override */
+    background: #FFF;
 }
 .close-modal {
     position: absolute;
@@ -529,10 +650,10 @@ body:not(.dark) .modal-content {
     right: 20px;
     font-size: 30px;
     cursor: pointer;
-    color: #FFF; /* Dark mode default */
+    color: #FFF;
 }
 body:not(.dark) .close-modal {
-    color: #333; /* Light mode override */
+    color: #333;
 }
 
 /* Animations */
@@ -553,11 +674,11 @@ body:not(.dark) .close-modal {
         position: absolute;
         top: 60px;
         right: 20px;
-        background: #2A2A2A; /* Dark mode default */
+        background: #2A2A2A;
         padding: 20px;
     }
     body:not(.dark) .nav-links {
-        background: #F5F5F5; /* Light mode override */
+        background: #F5F5F5;
     }
     .nav-links.active {
         display: flex;
@@ -565,10 +686,10 @@ body:not(.dark) .close-modal {
     .hamburger {
         display: block;
     }
-    .about-content, .contact-container, .form-group {
+    /* .about-content, .contact-container, .form-group {
         flex-direction: column;
         text-align: center;
-    }
+    } */
     .timeline::before {
         left: 20px;
     }
@@ -580,5 +701,9 @@ body:not(.dark) .close-modal {
     }
     .timeline-content::before {
         left: 5px;
+    }
+    .tech-cloud span {
+        font-size: 0.8rem;
+        padding: 5px 10px;
     }
 }

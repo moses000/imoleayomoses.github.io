@@ -1,11 +1,31 @@
 // Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
-themeToggle.textContent = '☀️'; // Start with sun icon (light mode available)
+
+themeToggle.textContent = '☀️';
+// themeToggle.addEventListener('click', () => {
+//     document.body.classList.toggle('dark');
+//     themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+//     updateParticles();
+//     // updateParticles2();
+// });
+// Update the theme toggle to refresh both particle systems
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    updateParticles();
+    updateParticles();       // Hero section particles
+    updateSoftwareParticles(); // New software particles
 });
+
+// Initialize both on load
+// window.addEventListener('load', () => {
+//     // calculateCardWidth();
+//     // createIndicators();
+//     // goToSlide(0);
+//     // requestAnimationFrame(() => startAutoScroll());
+//     updateParticles();         // Hero section particles
+//     updateSoftwareParticles(); // New software particles
+// });
+
 
 // Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
@@ -21,6 +41,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
 gsap.to('#typed-name', { duration: 2, text: 'Imoleayo Moses', ease: 'none', onComplete: () => gsap.to('.subtitle', { opacity: 1, y: 0, duration: 1 }) });
 const logoImg = document.getElementById('logo-img');
 logoImg.addEventListener('mouseenter', () => gsap.to(logoImg, { rotationY: 180, duration: 0.5 }));
@@ -43,24 +64,33 @@ document.querySelectorAll('.progress').forEach(bar => {
 });
 
 // Tech Stack Cloud Animation
-// gsap.from('.tech-cloud span', { opacity: 0, scale: 0, stagger: 0.1, duration: 0.5, scrollTrigger: { trigger: '#skills' } });
-
-// gsap.registerPlugin(ScrollTrigger);
-
-gsap.from(".tech-cloud span", {
+gsap.from('.tech-cloud span', {
     opacity: 0,
-    scale: 0.3, // Prevents elements from disappearing
-    duration: 0.6, // Smooth animation duration
-    stagger: 0.1, // Delays each item slightly
-    ease: "back.out(1.7)", // Adds a nice bounce effect
-    transformOrigin: "center center",
-    scrollTrigger: {
-        trigger: ".tech-cloud",
-        start: "top 80%", // Animates when 80% of the element is in view
-        toggleActions: "play none none reverse" // Reverses animation when scrolling back up
-    }
+    scale: .9,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: 'back.out(1.5)',
+    transformOrigin: 'center center',
+    scrollTrigger: { trigger: '.tech-cloud', start: 'top 60%', toggleActions: 'play none none reverse' }
 });
 
+// Performance Metrics Animation
+document.querySelectorAll('.metric-value').forEach(metric => {
+    const target = parseInt(metric.getAttribute('data-target'));
+    gsap.to(metric, {
+        duration: 2,
+        innerHTML: target,
+        roundProps: 'innerHTML',
+        ease: 'power1.out',
+        scrollTrigger: { trigger: '#skills' },
+        onUpdate: () => metric.innerHTML = Math.round(metric.innerHTML) + '%'
+    });
+});
+
+// Live Demo Widget: Visitor Performance Monitor
+// ... (other code above remains unchanged)
+
+// Live Demo Widget: Visitor Performance Monitor
 // Performance Metrics Animation
 document.querySelectorAll('.metric-value').forEach(metric => {
     const target = parseInt(metric.getAttribute('data-target'));
@@ -117,26 +147,70 @@ function updateChart() {
 // Start monitoring
 if (canvas) requestAnimationFrame(measurePerformance); // Only start if canvas exists
 
+
+// const coreCount = navigator.hardwareConcurrency || 'Unknown';
+// document.getElementById('performance-text').textContent = `Cores: ${coreCount} | Real-time CPU impact of this site on your device.`;
+
+// ... (other code below remains unchanged)
+
+const coreCount = navigator.hardwareConcurrency || 'Unknown';
+document.getElementById('performance-text').textContent = `Cores: ${coreCount} | Real-time CPU impact of this site on your device.`;
+if (canvas) requestAnimationFrame(measurePerformance);
+
 // Projects Carousel
-const carouselInner = document.querySelector('.carousel-inner');
-const projectCards = document.querySelectorAll('.project-card');
-const cardWidth = projectCards[0]?.offsetWidth + 20 || 380; // Fallback width if no cards
-let currentIndex = 0;
-const visibleCards = 3;
+document.addEventListener("DOMContentLoaded", function () {
+    const carouselInner = document.querySelector(".carousel-inner");
+    const prevButton = document.querySelector(".carousel-prev");
+    const nextButton = document.querySelector(".carousel-next");
+    const indicators = document.querySelectorAll(".carousel-indicators span");
+    
+    let currentIndex = 0;
+    const totalItems = document.querySelectorAll(".project-card").length;
+    const itemWidth = document.querySelector(".project-card").offsetWidth + 20; // Include gap
 
-document.querySelector('.carousel-next').addEventListener('click', () => {
-    if (currentIndex < projectCards.length - visibleCards) {
-        currentIndex++;
-        gsap.to(carouselInner, { x: -currentIndex * cardWidth, duration: 0.5, ease: 'power2.out' });
+    function updateCarousel() {
+        const newTransform = -currentIndex * itemWidth + "px";
+        carouselInner.style.transform = `translateX(${newTransform})`;
+
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle("active", index === currentIndex);
+        });
     }
+
+    nextButton.addEventListener("click", function () {
+        if (currentIndex < totalItems - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Loop back to first
+        }
+        updateCarousel();
+    });
+
+    prevButton.addEventListener("click", function () {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = totalItems - 1; // Loop to last item
+        }
+        updateCarousel();
+    });
+
+    // Indicator Click Event
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", function () {
+            currentIndex = index;
+            updateCarousel();
+        });
+    });
+
+    // Auto-scroll every 5 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+    }, 5000);
 });
 
-document.querySelector('.carousel-prev').addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        gsap.to(carouselInner, { x: -currentIndex * cardWidth, duration: 0.5, ease: 'power2.out' });
-    }
-});
 
 // Particles.js Background
 function updateParticles() {
@@ -153,6 +227,28 @@ function updateParticles() {
     });
 }
 updateParticles();
+// Add this new function below updateParticles()
+function updateSoftwareParticles() {
+    particlesJS('software-particles', {
+        particles: {
+            number: { value: 50, density: { enable: true, value_area: 1000 } },
+            color: { value: document.body.classList.contains('dark') ? '#00FF99' : '#0066CC' },
+            shape: { type: 'polygon', polygon: { nb_sides: 6 } },
+            opacity: { value: 0.7, random: false },
+            size: { value: 4, random: true, anim: { enable: true, speed: 1, size_min: 2 } },
+            line_linked: { enable: true, distance: 150, color: document.body.classList.contains('dark') ? '#00CC66' : '#004080', opacity: 0.4, width: 1 },
+            move: { enable: true, speed: 1.5, direction: 'top', random: false, straight: true, out_mode: 'out', bounce: false }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: { onhover: { enable: true, mode: 'connect' }, onclick: { enable: true, mode: 'push' }, resize: true },
+            modes: { connect: { distance: 200, line_linked: { opacity: 0.6 } }, push: { particles_nb: 2 } }
+        },
+        retina_detect: true
+    });
+}
+// updateParticles();         // Hero section particles
+    updateSoftwareParticles();
 
 // YouTube Modal
 const modal = document.getElementById('video-modal');

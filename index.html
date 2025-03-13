@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="dark">
+    <!-- <div id="software-particles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div> -->
     <header>
+        <!-- <div id="software-particles"></div> -->
+        <!-- <div id="particles-js"></div> -->
         <div class="logo">
             <img src="Imoleayo_moses_photo.jfif" alt="Imoleayo Moses Logo" id="logo-img">
         </div>
@@ -28,13 +33,14 @@
         </nav>
         <button id="theme-toggle">🌙</button>
     </header>
-
+    <!-- <div id="particles-js"></div> -->
     <main>
         <section id="home" class="hero">
             <div id="particles-js"></div>
+            <!-- <div id="particles2-js"></div> -->
             <h1><span id="typed-name">Imoleayo Moses</span></h1>
-            <p class="subtitle">Software Engineer & Automation Expert</p>
-            <p>Building scalable, AI-driven solutions for a connected world.</p>
+            <p class="subtitle">Software Engineer | Automation Expert | Cloud, AI & Quantum Enthusiast</p>
+            <p class="tagline">Architecting Scalable Enterprise Solutions for a Hyper-Connected Future</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn pulse">Explore Projects</a>
                 <a href="#contact" class="btn pulse">Hire Me</a>
@@ -45,8 +51,31 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>With over 6 years of experience, I specialize in data-driven automation, real-time systems, and AI/ML solutions. From telecom network dashboards to e-commerce platforms, I turn complex challenges into efficient, scalable outcomes.</p>
-                    <p><strong>Stats:</strong> 20+ developers mentored | 98% network uptime achieved | 80% faster analytics</p>
+                    <p>
+                        I am a seasoned Software Engineer and Automation Specialist with over six years of experience architecting data-driven solutions, scalable enterprise applications, and AI-powered automation systems. My expertise encompasses full-stack development, DevOps, cloud infrastructure, and machine learning, enabling me to deliver high-performance applications that address complex real-world challenges with precision and efficiency.
+                    </p>
+                    <p>
+                        Currently, I am advancing my research into quantum computing and quantum programming methodologies. By leveraging cloud-accessible quantum hardware, I am exploring innovative approaches to enhance algorithmic performance, with potential applications in cryptography, optimization, and next-generation computing paradigms.
+                    </p>
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>
+                            <strong>Software Development:</strong> Proficient in Python, JavaScript, TypeScript, and Rust, I utilize frameworks such as Django, FastAPI, Node.js, React, React Native, Next.js, NestJS, Axum, and Actix Web to build robust, scalable applications across web, mobile, and desktop platforms.
+                        </li>
+                        <li>
+                            <strong>Automation & Artificial Intelligence:</strong> I design intelligent systems for real-time monitoring, large-scale network fault management, predictive maintenance, and AI-driven recommendation engines, optimizing workflows and enhancing operational efficiency.
+                        </li>
+                        <li>
+                            <strong>DevOps & Cloud Engineering:</strong> Skilled in Docker, Kubernetes, AWS, and CI/CD pipelines, I streamline deployment processes, improve system reliability, and ensure scalability for enterprise-grade solutions.
+                        </li>
+                        <li>
+                            <strong>Quantum Computing Research:</strong> I am actively investigating quantum programming techniques using Python-based frameworks, harnessing cloud quantum hardware to develop high-performance algorithms for cutting-edge applications.
+                        </li>
+                    </ul>
+                    <p>
+                        I am committed to pushing the boundaries of technology through collaboration and innovation. I welcome opportunities to engage with like-minded professionals on projects that redefine software development and automation.
+                    </p>
+                    <p><strong>Career Highlights:</strong> Mentored 20+ developers | Achieved 98% network uptime | Improved analytics performance by 80%</p>
                 </div>
                 <img src="Imoleayo_moses_photo.jfif" alt="Imoleayo Moses" class="about-img">
             </div>
@@ -59,16 +88,23 @@
                     <div class="timeline-content">
                         <h3>RGS World Wide Limited (Huawei)</h3>
                         <p><strong>Software Engineer & Automation Lead</strong> | May 2021 – Present</p>
-                        <p>Designed AI/ML-powered telecom systems, achieving 98% uptime across 40,000+ sites.</p>
+                        <p>Led the development of AI/ML-powered network management systems, enhancing real-time monitoring and achieving 98% uptime across 40,000+ telecom sites.</p>
+                        <p>Designed real-time analytics dashboards using SQL, Prometheus, and Grafana, reducing incident analysis time by 80%.</p>
+                        <p>Implemented secure authentication and compliance mechanisms with OAuth, JWT, and AWS IAM policies.</p>
+                        <p>Managed a 20+ developer team, improving project completion rates to 95% through mentorship and training.</p>
                     </div>
+                    
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>DevFast Innovations</h3>
                         <p><strong>Software Developer</strong> | Sep 2018 – Apr 2021</p>
-                        <p>Built scalable payment gateways with 99.9% reliability using NestJS and AWS.</p>
+                        <p>Developed high-volume, secure payment gateways using NestJS, Stripe API, and PostgreSQL, ensuring 99.9% transaction reliability.</p>
+                        <p>Optimized cloud-native applications with AWS (EC2, S3, RDS, Lambda) and Docker Compose, improving request processing by 40%.</p>
+                        <p>Architected scalable microservices with PostgreSQL, MongoDB, and RabbitMQ, reducing query latency by 35% and enhancing data consistency.</p>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <h3>GitHub Inc. Campus Ambassador</h3>
@@ -80,96 +116,77 @@
         </section>
 
         <section id="skills" class="section">
+            <div id="software-particles"></div>
             <h2>Skills</h2>
             <div class="skills-grid">
-                <div class="skill-bar"><span>Python</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
-                <div class="skill-bar"><span>JavaScript</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
-                <div class="skill-bar"><span>TypeScript</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
-                <div class="skill-bar"><span>SQL</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
-                <div class="skill-bar"><span>noSQL</span><div class="progress-bar"><div class="progress" data-level="90"></div></div></div>
-                <div class="skill-bar"><span>AWS</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
-                <div class="skill-bar"><span>GO</span><div class="progress-bar"><div class="progress" data-level="50"></div></div></div>
-                <div class="skill-bar"><span>C++</span><div class="progress-bar"><div class="progress" data-level="40"></div></div></div>
-                <div class="skill-bar"><span>Machine Learning</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
-                <div class="skill-bar"><span> Low-Level Optimization (SIMD, Parallel Processing)</span><div class="progress-bar"><div class="progress" data-level="70"></div></div></div>
-                <div class="skill-bar"><span> AI Agents</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
-                <div class="skill-bar"><span> Automation</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
+                <div class="skill-bar"><span>Leadership and Mentoring</span><div class="progress-bar"><div class="progress" data-level="100"></div></div></div>
+                <div class="skill-bar"><span>Multitasking and Complex Problem Solving</span><div class="progress-bar"><div class="progress" data-level="100"></div></div></div>
+                <div class="skill-bar"><span>Web and Mobile Applications</span><div class="progress-bar"><div class="progress" data-level="100"></div></div></div>
+                <div class="skill-bar"><span>Operation and Deployment</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
+                <div class="skill-bar"><span>Automation and ML</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
+                <div class="skill-bar"><span>Low-Level Optimization (SIMD, Parallel Processing)</span><div class="progress-bar"><div class="progress" data-level="80"></div></div></div>
+                <div class="skill-bar"><span>Cloud Applications</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
+                <div class="skill-bar"><span>AI Agents</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
+                <div class="skill-bar"><span>Desktop and GUI</span><div class="progress-bar"><div class="progress" data-level="60"></div></div></div>
             </div>
             <div class="tech-cloud">
-                <span>FastAPI</span>
-                <span>Django</span>
-                <span>React</span>
-                <span>ReactNative</span>
-                <span>NextJs</span>
-                <span>gRPC & Protocol 
-                    Buffers</span>
-                <span>Apache Spark</span>
-                <span>Postgresql</span>
-                <span>Redis</span>
-                <span>DynamoDB</span>
-                <span>Microservices</span>
-                <span>Route53</span>
-                <span>AWS Lambda</span>
-                <span>Terraform</span>
-                <span>GitHub Actions</span>
-                <span>Jenkins</span>
-                <span>Automation</span>
-                <span>Neo4j</span>
-                <span>Cassandra</span>
-                <span>TimescaleDB</span>
-                <span>Node.js</span>
-                <span>GraphQL</span>
-                <span>Docker</span>
-                <span>Kubernetes</span>
-                <span>Kafka</span>
-                <span>TensorFlow</span>
-                <span>MongoDB</span>
+                <span>Python</span><span>Javascript</span><span>Goland</span><span>C++</span><span>AWS</span>
+                <span>Prometheus</span><span>Grafana</span><span>Ansible</span><span>SQL</span><span>NoSql</span>
+                <span>FastAPI</span><span>Django</span><span>React</span><span>ReactNative</span><span>NextJs</span>
+                <span>gRPC & Protocol Buffers</span><span>Apache Spark</span><span>Postgresql</span><span>Redis</span>
+                <span>DynamoDB</span><span>Microservices</span><span>Route53</span><span>AWS Lambda</span>
+                <span>Terraform</span><span>GitHub Actions</span><span>Jenkins</span><span>RabbitMQ Cloud</span>
+                <span>Neo4j</span><span>Cassandra</span><span>TimescaleDB</span><span>Node.js</span>
+                <span>GraphQL</span><span>Docker</span><span>Kubernetes</span><span>Kafka</span>
+                <span>TensorFlow</span><span>MongoDB</span>
             </div>
             <div class="metrics">
-                <div><span class="metric-value" data-target="45">0</span>% <p>Query Latency Reduced</p></div>
-                <div><span class="metric-value" data-target="98">0</span>% <p>Network Uptime and availability</p></div>
-                <div><span class="metric-value" data-target="80">0</span>% <p>Faster Analytics</p></div>
+                <div><span class="metric-value" data-target="45">0</span> <p>Query Latency Reduced</p></div>
+                <div><span class="metric-value" data-target="98">0</span> <p>Network Uptime and availability</p></div>
+                <div><span class="metric-value" data-target="80">0</span> <p>Faster Analytics</p></div>
             </div>
-            <!-- <h3>System Performance</h3> -->
             <div class="live-demo">
                 <h3>Visitor Performance Monitor</h3>
                 <canvas id="performance-chart" width="250" height="100"></canvas>
-                <p>Cores: ${coreCount} | Real-time CPU impact of this site on your device. </p>
-              </div>
-            <!-- <div class="live-demo">
-                <h3>Live Network Monitor Demo</h3>
-                <canvas id="network-chart" width="300" height="150"></canvas>
-                <p>Simulated CPU Usage (updates every 2s)</p>
-            </div> -->
+                <p id="performance-text">Real-time CPU impact of this site on your device.</p>
+            </div>
         </section>
 
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="projects-carousel">
                 <div class="carousel-inner">
-                    <div class="project-card">
+                    <div class="project-card" data-index="0">
                         <h3>Server Monitoring Dashboard</h3>
                         <p>A real-time platform for CPU, memory, and network metrics visualization.</p>
                         <p><strong>Tech:</strong> React.js, Python, Prometheus</p>
                         <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn demo-btn">Watch Demo</a>
+                            <a href="https://www.youtube.com/channel/UCwOG8efnNEoJol9vwyHixww" class="btn demo-btn">Watch Demo</a>
                             <a href="https://github.com" class="btn">View Code</a>
                         </div>
                     </div>
-                    <div class="project-card">
+                    <div class="project-card" data-index="1">
                         <h3>Pikia Market</h3>
                         <p>A full-stack e-commerce app connecting African vendors to the diaspora.</p>
                         <p><strong>Tech:</strong> Python, Node.js, React Native</p>
                         <div class="project-links">
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn demo-btn">Watch Demo</a>
+                            <a href="https://www.youtube.com/channel/UCwOG8efnNEoJol9vwyHixww" class="btn demo-btn">Watch Demo</a>
                             <a href="https://github.com" class="btn">View Code</a>
                         </div>
                     </div>
-                    <!-- Add 18 more projects here -->
-                    <div class="project-card">
-                        <h3>Project 20</h3>
-                        <p>A placeholder for your 20th project.</p>
-                        <p><strong>Tech:</strong> Python, AWS</p>
+                    <div class="project-card" data-index="2">
+                        <h3>AI Chatbot</h3>
+                        <p>An intelligent assistant powered by natural language processing.</p>
+                        <p><strong>Tech:</strong> Python, TensorFlow, Flask</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/channel/UCwOG8efnNEoJol9vwyHixww" class="btn demo-btn">Watch Demo</a>
+                            <a href="https://github.com" class="btn">View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card" data-index="20">
+                        <h3>Data Pipeline</h3>
+                        <p>A scalable ETL pipeline for real-time analytics.</p>
+                        <p><strong>Tech:</strong> Apache Kafka, Python, PostgreSQL</p>
                         <div class="project-links">
                             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn demo-btn">Watch Demo</a>
                             <a href="https://github.com" class="btn">View Code</a>
@@ -178,6 +195,7 @@
                 </div>
                 <button class="carousel-prev">❮</button>
                 <button class="carousel-next">❯</button>
+                <div class="carousel-indicators"></div>
             </div>
         </section>
 
@@ -186,50 +204,83 @@
             <div class="awards-grid">
                 <div class="award-card">
                     <div class="inner">
-                        <div class="front">“Best in Project Development – STEMBelle Foundation 2021”</div>
+                        <div class="front">
+                            <i class="fas fa-trophy"></i> “Best in Project Development – STEMBelle Foundation 2021”
+                        </div>
                         <div class="back">Awarded for outstanding project work.</div>
                     </div>
                 </div>
                 <div class="award-card">
                     <div class="inner">
-                        <div class="front">“Huawei RNOC Quarterly Award – 2024”</div>
+                        <div class="front">
+                            <i class="fas fa-medal"></i> “Huawei RNOC Quarterly Award – 2024”
+                        </div>
                         <div class="back">Recognized for automation excellence.</div>
                     </div>
                 </div>
                 <div class="award-card">
                     <div class="inner">
-                        <div class="front">“Most Outstanding Staff & Team Player – 2024”</div>
+                        <div class="front">
+                            <i class="fas fa-users"></i> “Most Outstanding Staff & Team Player – 2024”
+                        </div>
                         <div class="back">Honored for teamwork and dedication.</div>
                     </div>
                 </div>
                 <div class="award-card">
                     <div class="inner">
-                        <div class="front">“Recommendation: Exceptional dedication – Huawei NOC Manager, 2024”</div>
+                        <div class="front">
+                            <i class="fas fa-certificate"></i> “Recommendation: Exceptional dedication – Huawei NOC Manager, 2024”
+                        </div>
                         <div class="back">Commended by NOC Manager.</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section contact-section">
-            <h2>Contact Me</h2>
-            <div class="contact-container">
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <textarea placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn pulse">Send Message</button>
-                </form>
-                <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:im.imoleayomoses@gmail.com">im.imoleayomoses@gmail.com</a></p>
-                    <p><strong>Phone:</strong> +234 8104913313</p>
-                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/imoleayomoses/">imoleayomoses</a></p>
-                    <a href="path-to-your-cv.pdf" download class="btn pulse">Download CV</a>
-                </div>
+        <!-- Contact Section -->
+<section id="contact" class="section contact-section">
+    <h2>📩 Get in Touch</h2>
+    <div class="contact-container">
+        
+        <!-- Contact Form -->
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+
+                <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                <input type="email" id="email" placeholder="Your Email" required>
             </div>
-        </section>
+
+            <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn pulse"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+
+        <!-- Contact Details -->
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> 
+                <a href="mailto:im.imoleayomoses@gmail.com">im.imoleayomoses@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> 
+                <a href="tel:+2348104913313">+234 810 491 3313</a></p>
+            <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> 
+                <a href="https://linkedin.com/in/imoleayomoses" target="_blank">Imoleayo Moses</a></p>
+            <p><i class="fab fa-github"></i> <strong>GitHub:</strong> 
+                <a href="https://github.com/moses000" target="_blank">moses000</a></p>
+            <p><i class="fab fa-medium"></i> <strong>Medium:</strong> 
+                <a href="https://medium.com/@imoleayomoses" target="_blank">Imoleayo Moses</a></p>
+            <p><i class="fab fa-youtube"></i> <strong>YouTube:</strong> 
+                <a href="https://www.youtube.com/channel/UCwOG8efnNEoJol9vwyHixww" target="_blank">Imoleayo Moses</a></p>
+            <p><a href="path-to-your-cv.pdf" download class="btn pulse">
+                <i class="fas fa-file-download"></i> Download My CV</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- FontAwesome Icons (Include in <head> or before </body>) -->
+<!-- <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script> -->
+
     </main>
 
     <footer>
