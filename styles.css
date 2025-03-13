@@ -157,6 +157,7 @@ body:not(.dark) .btn.pulse {
 }
 
 /* About */
+/* About */
 .about-content {
     display: flex;
     justify-content: center;
@@ -164,20 +165,39 @@ body:not(.dark) .btn.pulse {
     gap: 40px;
     max-width: 1000px;
     margin: 0 auto;
+    flex-wrap: wrap; /* Ensure that items wrap when necessary */
 }
+
 .about-text {
     max-width: 500px;
     text-align: left;
 }
+
 .about-img {
     width: 200px;
     border-radius: 10px;
     animation: slideIn 1s ease;
+    /* Ensure the image is responsive */
+    max-width: 100%; /* Image can shrink to fit container */
+    height: auto;
 }
-.about-text {
-    max-width: 600px; /* Slightly wider for better line length */
-    text-align: left;
-    line-height: 1.6; /* Improved readability */
+
+/* For larger screens, maintain side-by-side layout */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column; /* Stack image on top */
+        text-align: center; /* Center the text when stacked */
+    }
+
+    .about-text {
+        max-width: 100%; /* Remove max-width restriction */
+        padding: 20px; /* Add some padding for better spacing */
+    }
+
+    .about-img {
+        width: 150px; /* Slightly smaller image on smaller screens */
+        margin-bottom: 20px; /* Add space between image and text */
+    }
 }
 
 .about-text h3 {
@@ -216,6 +236,8 @@ body:not(.dark) .about-text li:before {
     font-weight: 700;
     color: inherit;
 }
+
+
 
 
 /* Timeline */
