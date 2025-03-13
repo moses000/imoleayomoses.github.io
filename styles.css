@@ -72,6 +72,53 @@ body:not(.dark) .nav-links a {
     cursor: pointer;
 }
 
+/* Add to the end of your existing styles.css */
+
+/* AR Suggestion */
+#ar-suggestion {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(10, 10, 20, 0.9);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1001; /* Above nav */
+}
+
+#ar-suggestion p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+#ar-suggestion .btn {
+    padding: 8px 16px;
+    background: linear-gradient(90deg, #00d4ff, #007bff);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#ar-suggestion .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 212, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+    #ar-suggestion {
+        top: 60px;
+        right: 10px;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
 /* Hero */
 
 .hero {
