@@ -160,57 +160,79 @@ if (canvas) requestAnimationFrame(measurePerformance);
 // Projects Carousel
 document.addEventListener("DOMContentLoaded", function () {
     const carouselInner = document.querySelector(".carousel-inner");
+    const projectCards = document.querySelectorAll(".project-card");
     const prevButton = document.querySelector(".carousel-prev");
     const nextButton = document.querySelector(".carousel-next");
-    const indicators = document.querySelectorAll(".carousel-indicators span");
-    
-    let currentIndex = 0;
-    const totalItems = document.querySelectorAll(".project-card").length;
-    const itemWidth = document.querySelector(".project-card").offsetWidth + 20; // Include gap
 
-    function updateCarousel() {
-        const newTransform = -currentIndex * itemWidth + "px";
-        carouselInner.style.transform = `translateX(${newTransform})`;
-
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle("active", index === currentIndex);
-        });
+    if (!carouselInner || projectCards.length === 0) {
+        console.error("❌ Carousel elements not found.");
+        return;
     }
 
-    nextButton.addEventListener("click", function () {
-        if (currentIndex < totalItems - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Loop back to first
-        }
-        updateCarousel();
-    });
+    let currentIndex = 0;
+    const totalItems = projectCards.length;
+    const itemWidth = projectCards[0].offsetWidth + 20; // Include margins
+    let isPaused = false;
+    let isManualControl = false;
 
-    prevButton.addEventListener("click", function () {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = totalItems - 1; // Loop to last item
-        }
-        updateCarousel();
-    });
+    function updateCarousel() {
+        const newPosition = -currentIndex * itemWidth;
+        carouselInner.style.transform = `translateX(${newPosition}px)`;
+    }
 
-    // Indicator Click Event
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener("click", function () {
-            currentIndex = index;
+    function moveNext() {
+        if (!isManualControl) {
+            currentIndex = (currentIndex + 1) % totalItems;
             updateCarousel();
-        });
+        }
+    }
+
+    function movePrev() {
+        if (!isManualControl) {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
+    }
+
+    let autoMove = setInterval(moveNext, 3000); // Auto-scroll every 3 seconds
+
+    // Pause on hover
+    carouselInner.addEventListener("mouseenter", () => {
+        isPaused = true;
+        clearInterval(autoMove);
     });
 
-    // Auto-scroll every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % totalItems;
-        updateCarousel();
-    }, 5000);
+    carouselInner.addEventListener("mouseleave", () => {
+        isPaused = false;
+        autoMove = setInterval(moveNext, 3000);
+    });
+
+    // Manual control with buttons
+    prevButton.addEventListener("click", () => {
+        isManualControl = true;
+        movePrev();
+    });
+
+    nextButton.addEventListener("click", () => {
+        isManualControl = true;
+        moveNext();
+    });
+
+    updateCarousel(); // Initialize position
 });
 
+
+
+// const indicatorsContainer = document.querySelector(".carousel-indicators");
+
+// // Generate indicators dynamically based on the number of project cards
+// for (let i = 0; i < totalItems; i++) {
+//     const indicator = document.createElement("span");
+//     if (i === 0) indicator.classList.add("active");
+//     indicatorsContainer.appendChild(indicator);
+// }
+
+// const indicators = document.querySelectorAll(".carousel-indicators span");
 
 // Particles.js Background
 function updateParticles() {
